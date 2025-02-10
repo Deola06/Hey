@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+.dancing-script{
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+
+#envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 200px;
+    background-color: #f9c5c8;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+.flap {
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 92px solid transparent;
+    border-top: 108px solid #7d0000;
+    transform-origin: top;
+}
+.pocket {
+    border-left: 150px solid #ff8080;
+    border-right: 150px solid #ff8080;
+    border-bottom: 100px solid #cb6464;
+    border-top: 100px solid transparent;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.letter {
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 95%;
+    top: 5%;
+    border-radius: 6px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+    font-family: "Dancing Script";
+}
+.letter:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 40%, rgba(215, 227, 239, 0.50) 75%, rgba(215, 227, 239, 0.70) 100%);
+}
+.words {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 15%;
+    font-size: 15px;
+    text-align:start;
+}
+.words.line1 {
+    top: 15%;
+}
+.words.line2 {
+    top: 20%;
+}
+.words.line3 {
+    top: 60%;
+}
+.words.line4 {
+    top: 70%;
+    text-align: end;
+}
+.open .flap {
+    transform: rotatex(180deg);
+    transition: transform 0.4s ease, z-index 0.6s;
+    z-index: 1;
+}
+.close .flap {
+    transform: rotatex(0deg);
+    transition: transform 0.4s 0.6s ease, z-index 1s;
+    z-index: 5;
+}
+.close .letter {
+    transform: translatey(0px);
+    transition: transform 0.4s ease, z-index 1s;
+    z-index: 1;
+}
+.open .letter {
+    transform: translatey(-150px);
+    transition: transform 0.4s 0.6s ease, z-index 0.6s;
+    z-index: 2;
+}
+
+.open #envelope {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+}
+
+
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-200px) scale(1); opacity: 0; }
+}
+.heart {
+    bottom: 0;
+    position: absolute;
+    color: red;
+    font-size: 24px;
+    animation: floatHearts 4s ease-in-out infinite;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color:  #fdd6d6;
+    background: radial-gradient(circle, #ffbfbf, #dea9a9);
+    animation: glow 3s infinite alternate;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@keyframes glow {
+    0% { background: #ffb3b3; }
+    100% { background: #ffa9a9; }
+}
+
+.envelope-wrapper {
+    height: 450px;
+}
+.reset {
+    text-align: center;
+}
+.reset button {
+    font-weight: 800;
+    font-style: normal;
+    transition: all 0.1s linear;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: solid 2px #b20000;
+    border-radius: 4px;
+    color: #b20000;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0px 5px;
+    padding: 10px;
+    line-height: 1em;
+    text-decoration:  none;
+    min-width: 120px;
+    outline: none;
+}
+.reset button:hover {
+    background-color: #b20000;
+    color: #fff;
+}
+
+.kiss-mark {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('pngimg.com\ -\ kiss_PNG85732.png') no-repeat center;
+    background-size: contain;
+    opacity: 1;
+    transform: scale(1);
+    animation: kissFade 1s ease-out forwards;
+}
+
+@keyframes kissFade {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+
